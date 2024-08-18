@@ -10,7 +10,7 @@ Follow step by step below to install and run the bot:
 | Step                                    | Command                                                                |
 |-------------------------------------------|-------------------------------------------------------------------------------------------|
 | **1. Clone the repository and get in to bot folder** | 
-|                                             | `git clone https://github.com/vainzew/tomarket.git`                                      |
+|                                             | `git clone https://github.com/vainzew/tomato.git`                                      |
 |                                             | `cd tomarket`                                                                            |
 | **2. Create and activate virtual environment** | 
 |                                             | For **Termux** or **VPS**:                                                           |
