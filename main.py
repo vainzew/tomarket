@@ -10,8 +10,8 @@ from tabulate import tabulate
 init()
 
 # Telegram bot setup
-TELEGRAM_BOT_TOKEN = 'YOUR BOT TOKEN (GET IT FROM BOTFATHER ON TELEGRAM)'
-TELEGRAM_CHAT_ID = 'YOUR TELEGRAM CHAT ID'
+TELEGRAM_BOT_TOKEN = '7271892969:AAFmJWFWdL4Hr8tqzoCmA3u8XSyfwsjIOdI'
+TELEGRAM_CHAT_ID = '7299018476'
 TELEGRAM_API_URL = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage' if TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID else None
 
 headers = {
@@ -133,8 +133,8 @@ def main():
         return
 
     while True:
-        total_balance = 0
-        total_tickets = 0
+        account_balances = []
+        account_tickets = []
         
         for i, token in enumerate(tokens):
             token = token.strip()
@@ -148,8 +148,8 @@ def main():
                 balance = int(balance)  # Convert to integer to remove decimal part
                 tickets = balance_response['data'].get('play_passes', 0)
                 
-                total_balance += balance
-                total_tickets += tickets
+                account_balances.append(balance)
+                account_tickets.append(tickets)
                 
                 rows.append([
                     Fore.YELLOW + "Balance" + Style.RESET_ALL, f"{balance}",
@@ -256,9 +256,12 @@ def main():
             
             print_table(rows, headers=["Type", "Details"])
         
-        # Send total balance status to Telegram
-        total_status_message = f"Total Balance Status:\nTotal Balance: {total_balance}\nTotal Tickets: {total_tickets}"
-        send_telegram_message(total_status_message)
+        # Prepare and send individual account balances to Telegram
+        status_message = "Account Balances:\n"
+        for i, (balance, tickets) in enumerate(zip(account_balances, account_tickets)):
+            status_message += f"Account {i+1}: Balance = {balance}, Tickets = {tickets}\n"
+        
+        send_telegram_message(status_message)
         
         countdown(300)  # Countdown for 5 minutes before repeating
 
