@@ -1,7 +1,9 @@
-# Instalastion bot
+# Tomarket auto start and claim bot
 
 Auto start and claim tomarket ( Send notification on your telegram bot )
 If have any question or update chat me on https://t.me/rynalfan
+
+# Installation bot
 
 Follow step by step below to install and run the bot:
 
