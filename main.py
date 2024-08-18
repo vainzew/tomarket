@@ -10,8 +10,8 @@ from tabulate import tabulate
 init()
 
 # Telegram bot setup
-TELEGRAM_BOT_TOKEN = '7271892969:AAFmJWFWdL4Hr8tqzoCmA3u8XSyfwsjIOdI'
-TELEGRAM_CHAT_ID = '7299018476'
+TELEGRAM_BOT_TOKEN = 'YOUR BOT TOKEN OR BLANK, GET IT FORM BOTFATHER TELEGRAM'
+TELEGRAM_CHAT_ID = 'YOUR CHAT ID'
 TELEGRAM_API_URL = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage' if TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID else None
 
 headers = {
