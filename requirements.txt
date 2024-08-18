@@ -1,0 +1,4 @@
+requests
+colorama
+tabulate
+python-telegram-bot
